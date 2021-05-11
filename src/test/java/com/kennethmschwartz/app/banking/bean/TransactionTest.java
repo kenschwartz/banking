@@ -152,5 +152,7 @@ class TransactionTest {
     void fromEST() {
         ZonedDateTime dt = Transaction.fromEST(13, 0, 4, 5, 1969);
         assertEquals("1969-05-04T13:00-04:00[America/New_York]", dt.toString());
+        dt = Transaction.fromEST(13, 14, 13, 10, 1969);
+        assertEquals("1969-10-13T13:14-04:00[America/New_York]", dt.toString());
     }
 }
