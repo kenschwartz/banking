@@ -42,7 +42,7 @@ public class Transaction implements Serializable, Cloneable {
         final String EST = "America/New_York";
         DateTimeFormatter format = DateTimeFormatter.ofPattern("H m d M yyyy VV");
         final String asString = String.format("%d %d %d %d %d %s", hour24, minute, day, month, year, EST);
-        log.debug(String.format("sb: %s", asString));
+        //log.debug(String.format("sb: %s", asString));
         return ZonedDateTime.parse(asString, format);
     }
 }
