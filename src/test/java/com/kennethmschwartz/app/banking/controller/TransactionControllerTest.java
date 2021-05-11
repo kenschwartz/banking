@@ -36,6 +36,7 @@ class TransactionControllerTest {
         String urlToUse = String.format("%s/1", url);
         final ResponseEntity<String> result = this.restTemplate.getForEntity(urlToUse, String.class);
         assertNotNull(result.getBody());
+        System.out.printf("-----\nBody: %s\n-----\n", result.getBody());
         assertEquals(MediaType.APPLICATION_JSON, result.getHeaders().getContentType());
 
         urlToUse = String.format("%s/x", url);
