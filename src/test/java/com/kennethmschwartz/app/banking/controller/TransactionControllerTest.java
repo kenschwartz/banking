@@ -4,18 +4,23 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.web.servlet.MockMvc;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Slf4j
+@AutoConfigureMockMvc
 class TransactionControllerTest {
 
     @LocalServerPort
@@ -23,6 +28,10 @@ class TransactionControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
+    @Autowired
+    private TransactionController controller;
+    @Autowired
+    private MockMvc mockMvc;
 
     private String url;
 
@@ -33,6 +42,7 @@ class TransactionControllerTest {
 
     @Test
     void findAllByAccountNumber() {
+        assertThat(controller).isNotNull();
         String urlToUse = String.format("%s/1", url);
         final ResponseEntity<String> result = this.restTemplate.getForEntity(urlToUse, String.class);
         assertNotNull(result.getBody());
@@ -43,6 +53,8 @@ class TransactionControllerTest {
         final ResponseEntity<String> result2 = this.restTemplate.getForEntity(urlToUse, String.class);
         assertNotNull(result2.getBody());
         assertEquals(HttpStatus.BAD_REQUEST.value(), result2.getStatusCodeValue());
+
+
     }
 
     @Test

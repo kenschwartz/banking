@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @Slf4j
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = OpenBankingAppApplication.class)
-class TransactionServiceImplTest {
+class TransactionServiceTest {
 
     @Autowired
     private TransactionServiceImpl transactionService;
