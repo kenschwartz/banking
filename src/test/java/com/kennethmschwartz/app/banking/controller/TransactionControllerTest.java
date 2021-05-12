@@ -1,6 +1,5 @@
 package com.kennethmschwartz.app.banking.controller;
 
-import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +13,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@Slf4j
 @AutoConfigureMockMvc
 class TransactionControllerTest {
 
@@ -53,8 +50,6 @@ class TransactionControllerTest {
         final ResponseEntity<String> result2 = this.restTemplate.getForEntity(urlToUse, String.class);
         assertNotNull(result2.getBody());
         assertEquals(HttpStatus.BAD_REQUEST.value(), result2.getStatusCodeValue());
-
-
     }
 
     @Test
