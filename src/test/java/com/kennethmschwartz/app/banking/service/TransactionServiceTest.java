@@ -23,8 +23,7 @@ class TransactionServiceTest {
     @Test
     void findAllByAccountNumber() {
         assertNotNull(transactionService);
-        List<Transaction> x = transactionService.emptyTransactions();
-        assertEquals(x, transactionService.findAllByAccountNumber(0));
+        assertEquals(1, transactionService.findAllByAccountNumber(0).size());
     }
 
     @Test

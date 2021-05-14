@@ -1,4 +1,4 @@
-package com.kennethmschwartz.app.banking.controller;
+package com.kennethmschwartz.app.banking.web;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +12,10 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 
+<<<<<<< HEAD:src/test/java/com/kennethmschwartz/app/banking/controller/TransactionControllerTest.java
 import static org.assertj.core.api.Assertions.assertThat;
+=======
+>>>>>>> 1_2:src/test/java/com/kennethmschwartz/app/banking/web/TransactionControllerTest.java
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -34,7 +37,7 @@ class TransactionControllerTest {
 
     @BeforeEach
     void setUp() {
-        url = String.format("http://localhost:%d/transactions", port);
+        url = String.format("http://localhost:%d/api/v1/transactions", port);
     }
 
     @Test
