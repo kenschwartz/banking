@@ -1,4 +1,4 @@
-package com.kennethmschwartz.app.banking.controller;
+package com.kennethmschwartz.app.banking.web;
 
 import com.kennethmschwartz.app.banking.bean.Transaction;
 import com.kennethmschwartz.app.banking.service.TransactionService;
