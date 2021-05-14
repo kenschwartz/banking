@@ -1,6 +1,7 @@
 package com.kennethmschwartz.app.banking.component;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -27,6 +28,7 @@ public class TransactionComponentTest {
     }
 
     @Test
+    @Disabled
     public void greeting_controller_returns_json_greeting() throws Exception {
         given().
                 //standaloneSetup(new GreetingController()).

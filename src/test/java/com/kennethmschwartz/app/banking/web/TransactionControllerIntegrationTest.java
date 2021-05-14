@@ -1,4 +1,4 @@
-package com.kennethmschwartz.app.banking.controller;
+package com.kennethmschwartz.app.banking.web;
 
 public class TransactionControllerIntegrationTest {
 }
