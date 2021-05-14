@@ -24,7 +24,7 @@ public class Transaction implements Serializable, Cloneable {
     private ZonedDateTime date;
 
     @NonNull
-    private String accountNumber;
+    private Integer accountNumber;
 
     @NonNull
     private Currency currency;

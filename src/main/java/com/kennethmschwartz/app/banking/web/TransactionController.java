@@ -1,4 +1,4 @@
-package com.kennethmschwartz.app.banking.controller;
+package com.kennethmschwartz.app.banking.web;
 
 import com.kennethmschwartz.app.banking.bean.Transaction;
 import com.kennethmschwartz.app.banking.service.TransactionService;
@@ -16,8 +16,8 @@ import java.util.List;
 @ToString
 @Slf4j
 @RestController
-@RequestMapping(path = "/transactions", produces = MediaType.APPLICATION_JSON_VALUE)
-@CrossOrigin(origins = "*")
+@RequestMapping(path = "/api/v1/transactions", produces = MediaType.APPLICATION_JSON_VALUE)
+//@CrossOrigin(origins = "*")
 public class TransactionController {
 
     private final TransactionService transactionService;
