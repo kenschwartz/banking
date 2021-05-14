@@ -11,7 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Slf4j
@@ -27,7 +28,7 @@ class TransactionControllerTest {
 
     @BeforeEach
     void setUp() {
-        url = String.format("http://localhost:%d/transactions", port);
+        url = String.format("http://localhost:%d/api/v1/transactions", port);
     }
 
     @Test
