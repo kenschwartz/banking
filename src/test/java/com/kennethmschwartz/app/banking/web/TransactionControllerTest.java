@@ -12,10 +12,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 
-<<<<<<< HEAD:src/test/java/com/kennethmschwartz/app/banking/controller/TransactionControllerTest.java
 import static org.assertj.core.api.Assertions.assertThat;
-=======
->>>>>>> 1_2:src/test/java/com/kennethmschwartz/app/banking/web/TransactionControllerTest.java
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
