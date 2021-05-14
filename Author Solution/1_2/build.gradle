@@ -1,0 +1,43 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.2'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'io.better-banking'
+version = '1.0.1'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok:1.18.16'
+	annotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+	testCompileOnly 'org.projectlombok:lombok:1.18.16'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
+}
+
+test {
+	useJUnitPlatform()
+}
+
+task srcZip(type: Zip) {
+	classifier = 'src'
+	from projectDir
+	include 'src/**/*'
+	include '*.gradle'
+	include 'README.md'
+	doLast {
+		println "Path to zip: $archivePath.path"
+	}
+}
