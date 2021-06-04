@@ -26,11 +26,13 @@
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-osgi -->
+        <!-- changed to java11; let's see if this works
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-osgi</artifactId>
             <version>3.0.1</version>
         </dependency>
+        -->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -54,10 +56,12 @@
             <version>${rest.assured.version}</version>
             <scope>test</scope>
             <exclusions>
+                <!--
                 <exclusion>
                     <artifactId>jaxb-osgi</artifactId>
                     <groupId>com.sun.xml.bind</groupId>
                 </exclusion>
+                -->
             </exclusions>
         </dependency>
         <dependency>
