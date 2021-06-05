@@ -1,5 +1,6 @@
-package com.kennethmschwartz.app.banking.bean;
+package com.kennethmschwartz.app.banking.helper;
 
+import com.kennethmschwartz.app.banking.bean.Currency;
 import com.kennethmschwartz.app.banking.model.Transaction;
 import org.springframework.context.annotation.Bean;
 

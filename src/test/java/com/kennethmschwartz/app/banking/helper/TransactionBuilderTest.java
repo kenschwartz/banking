@@ -1,15 +1,14 @@
-package com.kennethmschwartz.app.banking.bean;
+package com.kennethmschwartz.app.banking.helper;
 
+import com.kennethmschwartz.app.banking.helper.TransactionBuilder;
 import com.kennethmschwartz.app.banking.model.Transaction;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Import;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class TransactionBuilderTest {
