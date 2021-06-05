@@ -10,7 +10,6 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.web.servlet.MockMvc;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -27,8 +26,6 @@ class TransactionControllerUsingSpringBootTest {
     private TestRestTemplate restTemplate;
     @Autowired
     private TransactionController controller;
-    @Autowired
-    private MockMvc mockMvc;
 
     private String url;
 
