@@ -40,13 +40,14 @@ class TransactionTest {
 
     @Test
     void builder() {
-        Transaction t2 = new Transaction();
-        t2.setType("x");
-        t2.setDate(dateTime);
-        t2.setAccountNumber(1);
-        t2.setCurrency(Currency.USD);
-        t2.setAmount(BigDecimal.valueOf(0));
-        t2.setMerchantName("Ken's");
+        Transaction t2 = Transaction.builder()
+                .type("x")
+                .date(dateTime)
+                .accountNumber(1)
+                .currency(Currency.USD)
+                .amount(BigDecimal.valueOf(0))
+                .merchantName("Ken's")
+                .build();
         assertEquals(t, t2);
     }
 
@@ -138,14 +139,21 @@ class TransactionTest {
     @Test
     void canEqual() {
         t = setUpTransaction();
-        Transaction t2 = new Transaction();
+        Transaction t2 = Transaction.builder()
+                .type("x")
+                .date(dateTime)
+                .accountNumber(1)
+                .currency(Currency.USD)
+                .amount(BigDecimal.valueOf(0))
+                .merchantName("Ken's")
+                .build();
         assertTrue(t.canEqual(t2));
     }
 
     @Test
     void testToString() {
         t = setUpTransaction();
-        assertEquals("Transaction(type=x, date=2021-05-11T14:07-04:00[America/New_York], accountNumber=1, currency=USD, amount=0, merchantName=Ken's, merchantLogo=null)",
+        assertEquals("Transaction(id=null, type=x, date=2021-05-11T14:07-04:00[America/New_York], accountNumber=1, currency=USD, amount=0, merchantName=Ken's, merchantLogo=null)",
                 t.toString());
     }
 

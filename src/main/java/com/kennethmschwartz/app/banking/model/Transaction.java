@@ -4,19 +4,26 @@ import com.kennethmschwartz.app.banking.bean.Currency;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
-@NoArgsConstructor
 @AllArgsConstructor
-@Data
-@Slf4j
+@NoArgsConstructor
 @Builder
+@Slf4j
+@Data
+@Entity
+@Table(name="transactions")
 //@RequiredArgsConstructor(staticName = "of")
 public class Transaction implements Serializable, Cloneable {
     private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @NonNull
     private String type;

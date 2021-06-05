@@ -2,8 +2,11 @@ package com.kennethmschwartz.app.banking.service;
 
 import com.kennethmschwartz.app.banking.bean.Currency;
 import com.kennethmschwartz.app.banking.model.Transaction;
+import com.kennethmschwartz.app.banking.model.TransactionRepository;
+import lombok.NonNull;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -15,20 +18,15 @@ import java.util.List;
 @Service
 public class TransactionServiceImpl implements TransactionService {
 
-    public List<Transaction> findAllByAccountNumber(final int accountNumber) {
-        //ArrayList<Transaction> list = new ArrayList<>();
-        return List.of(
-                Transaction
-                        .builder()
-                        .type("credit")
-                        .date(Transaction.fromEST(14, 7, 11, 5, 2021))
-                        .accountNumber(accountNumber)
-                        .currency(Currency.USD)
-                        .amount(BigDecimal.valueOf(100))
-                        .merchantName("acme")
-                        .merchantLogo("images/acme-logo.png")
-                        .build()
-        );
+    private final TransactionRepository repository;
+
+    @Autowired
+    public TransactionServiceImpl(final TransactionRepository repository) {
+        this.repository = repository;
+    }
+
+    public List<Transaction> findAllByAccountNumber(@NonNull final Integer accountNumber) {
+        return repository.findAllByAccountNumber(accountNumber);
     }
 
     public List<Transaction> emptyTransactions() {
