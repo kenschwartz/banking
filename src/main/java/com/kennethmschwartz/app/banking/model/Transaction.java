@@ -1,7 +1,10 @@
-package com.kennethmschwartz.app.banking.bean;
+package com.kennethmschwartz.app.banking.model;
 
+import com.kennethmschwartz.app.banking.bean.Currency;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

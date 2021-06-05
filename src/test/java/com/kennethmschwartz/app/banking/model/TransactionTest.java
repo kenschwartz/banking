@@ -1,5 +1,7 @@
-package com.kennethmschwartz.app.banking.bean;
+package com.kennethmschwartz.app.banking.model;
 
+import com.kennethmschwartz.app.banking.bean.Currency;
+import com.kennethmschwartz.app.banking.model.Transaction;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

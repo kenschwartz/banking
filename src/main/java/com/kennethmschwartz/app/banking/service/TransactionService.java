@@ -1,6 +1,6 @@
 package com.kennethmschwartz.app.banking.service;
 
-import com.kennethmschwartz.app.banking.bean.Transaction;
+import com.kennethmschwartz.app.banking.model.Transaction;
 
 import java.util.List;
 

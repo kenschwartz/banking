@@ -1,7 +1,7 @@
 package com.kennethmschwartz.app.banking.service;
 
 import com.kennethmschwartz.app.banking.bean.Currency;
-import com.kennethmschwartz.app.banking.bean.Transaction;
+import com.kennethmschwartz.app.banking.model.Transaction;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

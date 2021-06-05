@@ -1,6 +1,6 @@
 package com.kennethmschwartz.app.banking.web;
 
-import com.kennethmschwartz.app.banking.bean.Transaction;
+import com.kennethmschwartz.app.banking.model.Transaction;
 import com.kennethmschwartz.app.banking.service.TransactionService;
 import com.kennethmschwartz.app.banking.service.TransactionServiceImpl;
 import lombok.ToString;

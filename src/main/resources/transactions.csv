@@ -1,0 +1,8 @@
+0     1     2              3         4       5             6
+type; date; accountNumber; currency; amount; merchantName; merchantLogo
+x; 1969-05-04T13:00-04:00[America/New_York]; USD; 100; Ken's; some logo
+x; 1970-05-04T13:00-04:00[America/New_York]; USD; 200; Lilly's; some logo2
+x; 1971-05-04T13:00-04:00[America/New_York]; USD; 300; Halsey's; some logo3
+x; 1972-05-04T13:00-04:00[America/New_York]; USD; 400; Andrew's; some logo4
+x; 1973-05-04T13:00-04:00[America/New_York]; USD; 500; Mike's; some logo5
+x; 1974-05-04T13:00-04:00[America/New_York]; USD; 600; Jen's; some logo6
