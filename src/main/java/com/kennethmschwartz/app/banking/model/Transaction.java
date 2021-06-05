@@ -1,5 +1,6 @@
-package com.kennethmschwartz.app.banking.bean;
+package com.kennethmschwartz.app.banking.model;
 
+import com.kennethmschwartz.app.banking.bean.Currency;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
@@ -24,7 +25,7 @@ public class Transaction implements Serializable, Cloneable {
     private ZonedDateTime date;
 
     @NonNull
-    private String accountNumber;
+    private Integer accountNumber;
 
     @NonNull
     private Currency currency;

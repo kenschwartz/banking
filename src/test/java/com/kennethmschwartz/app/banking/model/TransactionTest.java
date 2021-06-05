@@ -1,5 +1,6 @@
-package com.kennethmschwartz.app.banking.bean;
+package com.kennethmschwartz.app.banking.model;
 
+import com.kennethmschwartz.app.banking.bean.Currency;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -22,7 +23,7 @@ class TransactionTest {
         return Transaction.builder()
                 .type("x")
                 .date(dateTime)
-                .accountNumber("1")
+                .accountNumber(1)
                 .currency(Currency.USD)
                 .amount(BigDecimal.valueOf(0))
                 .merchantName("Ken's")
@@ -42,7 +43,7 @@ class TransactionTest {
         Transaction t2 = new Transaction();
         t2.setType("x");
         t2.setDate(dateTime);
-        t2.setAccountNumber("1");
+        t2.setAccountNumber(1);
         t2.setCurrency(Currency.USD);
         t2.setAmount(BigDecimal.valueOf(0));
         t2.setMerchantName("Ken's");
@@ -61,7 +62,7 @@ class TransactionTest {
 
     @Test
     void getAccountNumber() {
-        assertEquals("1", t.getAccountNumber());
+        assertEquals(1, t.getAccountNumber());
     }
 
     @Test
@@ -99,8 +100,8 @@ class TransactionTest {
 
     @Test
     void setAccountNumber() {
-        t.setAccountNumber("zzzz");
-        assertEquals("zzzz", t.getAccountNumber());
+        t.setAccountNumber(2);
+        assertEquals(2, t.getAccountNumber());
     }
 
     @Test
