@@ -1,29 +1,54 @@
 package com.kennethmschwartz.app.banking.service;
 
-import com.kennethmschwartz.app.banking.OpenBankingAppApplication;
+import com.kennethmschwartz.app.banking.bean.Currency;
+import com.kennethmschwartz.app.banking.model.Transaction;
+import com.kennethmschwartz.app.banking.model.TransactionRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.math.BigDecimal;
+import java.time.ZonedDateTime;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.Mockito.when;
 
-@ExtendWith(SpringExtension.class)
-@SpringBootTest(classes = OpenBankingAppApplication.class)
 class TransactionServiceTest {
 
-    @Autowired
-    private TransactionServiceImpl transactionService;
+    ZonedDateTime dateTime = Transaction.fromEST(14, 7, 11, 5, 2021);
 
-    @Test
-    void findAllByAccountNumber() {
-        assertNotNull(transactionService);
-        assertEquals(1, transactionService.findAllByAccountNumber(0).size());
+    @Mock
+    private TransactionRepository transactionRepository;
+
+    @BeforeEach
+    public void setUp() {
+        MockitoAnnotations.openMocks(this);
     }
 
     @Test
-    void emptyTransactions() {
+    public void testTransactionCount() {
+        when(transactionRepository.findAllByAccountNumber(anyInt()))
+                .thenReturn(transactions());
+
+        var transactionService = new TransactionServiceImpl(transactionRepository);
+        assertEquals(1, transactionService.findAllByAccountNumber(1234567).size());
+    }
+
+    private List<Transaction> transactions() {
+        return List.of(
+                Transaction
+                        .builder()
+                        .type("credit")
+                        .date(dateTime)
+                        .accountNumber(1234567)
+                        .currency(Currency.USD)
+                        .amount(BigDecimal.valueOf(100.00))
+                        .merchantName("acme")
+                        .merchantLogo("images/acme-logo.png")
+                        .build()
+        );
     }
 }
