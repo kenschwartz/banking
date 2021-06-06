@@ -4,10 +4,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.UUID;
 
 @Repository
-public interface TransactionRepository extends JpaRepository<Transaction, UUID> {
+public interface TransactionRepository extends JpaRepository<Transaction, Long> {
     /*
     CREATE DATABASE banking DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
     GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP ON banking.* TO 'bank'@'%' IDENTIFIED BY 'bank';
