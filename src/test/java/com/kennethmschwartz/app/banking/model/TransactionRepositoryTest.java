@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(classes = {OpenBankingAppApplication.class})
 class TransactionRepositoryTest {
@@ -58,7 +58,7 @@ class TransactionRepositoryTest {
         assertNotNull(savedT.getId());
         t = savedT;
         var t2 = transactionRepository.findById(t.getId());
-        //assertTrue(t2.isPresent());
-        //assertEquals(t.getId(), t2.get().getId());
+        assertTrue(t2.isPresent());
+        assertEquals(t.getId(), t2.get().getId());
     }
 }
