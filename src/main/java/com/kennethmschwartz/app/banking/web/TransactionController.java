@@ -29,8 +29,8 @@ public class TransactionController {
 
     @GetMapping("/{accountNumber}")
     @ResponseBody
-    public ResponseEntity<List<Transaction>> findAllByAccountNumber(@PathVariable("accountNumber") String accountNumberStr) {
-        int accountNumber;
+    public ResponseEntity<List<Transaction>> findAllByAccountNumber(@PathVariable("accountNumber") final String accountNumberStr) {
+        Integer accountNumber;
         try {
             accountNumber = Integer.parseInt(accountNumberStr);
         } catch (Exception e) {

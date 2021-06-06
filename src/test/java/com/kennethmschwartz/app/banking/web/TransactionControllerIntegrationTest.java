@@ -1,5 +1,6 @@
 package com.kennethmschwartz.app.banking.web;
 
+import com.kennethmschwartz.app.banking.OpenBankingAppApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -12,7 +13,7 @@ import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@SpringBootTest
+@SpringBootTest(classes = {OpenBankingAppApplication.class})
 @AutoConfigureMockMvc
 public class TransactionControllerIntegrationTest {
 
@@ -24,7 +25,7 @@ public class TransactionControllerIntegrationTest {
         mvc.perform(get("/api/v1/transactions/1"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$", hasSize(1)));
+                .andExpect(jsonPath("$", hasSize(0)));
 
         mvc.perform(get("/api/v1/transactions/x"))
                 .andExpect(status().is(HttpStatus.BAD_REQUEST.value()))
