@@ -18,7 +18,7 @@ import java.util.UUID;
 @Slf4j
 @Data
 @Entity
-@Table(name="transactions")
+@Table(name = "transactions")
 //@RequiredArgsConstructor(staticName = "of")
 public class Transaction implements Serializable, Cloneable {
     private static final long serialVersionUID = 1L;

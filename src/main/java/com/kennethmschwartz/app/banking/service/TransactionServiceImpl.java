@@ -1,6 +1,5 @@
 package com.kennethmschwartz.app.banking.service;
 
-import com.kennethmschwartz.app.banking.bean.Currency;
 import com.kennethmschwartz.app.banking.model.Transaction;
 import com.kennethmschwartz.app.banking.model.TransactionRepository;
 import lombok.NonNull;
@@ -9,7 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -2,29 +2,23 @@ package com.kennethmschwartz.app.banking.model;
 
 import com.kennethmschwartz.app.banking.OpenBankingAppApplication;
 import com.kennethmschwartz.app.banking.bean.Currency;
-import com.kennethmschwartz.app.banking.service.TransactionServiceImpl;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
-import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(classes = {OpenBankingAppApplication.class})
 class TransactionRepositoryTest {
 
+    private final TransactionRepository transactionRepository;
     Transaction t;
     ZonedDateTime dateTime = Transaction.fromEST(14, 7, 11, 5, 2021);
-    private final TransactionRepository transactionRepository;
 
     @Autowired
     public TransactionRepositoryTest(final TransactionRepository repository) {
