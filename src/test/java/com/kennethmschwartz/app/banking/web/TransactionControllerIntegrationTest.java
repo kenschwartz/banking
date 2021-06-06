@@ -25,7 +25,7 @@ public class TransactionControllerIntegrationTest {
         mvc.perform(get("/api/v1/transactions/1"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$", hasSize(1)));
+                .andExpect(jsonPath("$", hasSize(0)));
 
         mvc.perform(get("/api/v1/transactions/x"))
                 .andExpect(status().is(HttpStatus.BAD_REQUEST.value()))
